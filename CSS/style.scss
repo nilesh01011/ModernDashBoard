@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+@import './components/root';
+
+body {
+    background: $background;
+    color: $white;
+    font-family: 'Inter', sans-serif;
+    user-select: none;
+
+    &.sidebarActive {
+        overflow: hidden;
+    }
+}
+
+.purples {
+    background: rgba(155, 81, 224, 0.1);
+    color: #9b51e0;
+}
+
+.success {
+    background: $success-bg;
+    color: $success;
+}
+
+.warning {
+    background: rgba(242, 153, 74, 0.1);
+    color: $warning;
+}
+
+.primary {
+    background: $primary-bg;
+    color: $primary;
+}
+
+.danger {
+    background: $danger-bg;
+    color: $danger;
+}
+
+.text-gray {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+}
+
+button {
+    background: none;
+
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+#overlay {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    right: 0;
+    top: 0;
+    position: fixed;
+    transform: translateX(100%);
+    z-index: 95;
+
+    &.active {
+        transform: translateX(0%);
+    }
+}
+
+.container-fluid {
+    max-width: 1280px;
+    width: 100%;
+}
+
+main.container-fluid {
+    width: 100%;
+    height: 100%;
+    padding: 0 40px;
+    margin-bottom: 50px;
+
+    & .heading {
+        padding: 30px 0;
+    }
+}
+
+.pages {
+    & .page {
+        display: none;
+    }
+
+    & .page.is-page-active {
+        display: block;
+    }
+}
+
+
+@import './components/header';
+@import './components/sidebar';
+@import './components/insightsCards';
+@import './components/charts';
+@import './components/ordersHistory';
+@import './components/mediaQueries';
+@import './components/customer';
+@import './components/cards_container';
+@import './components/previewCards';
+@import './components/adminHeader';
+@import './components/productDetails';
+@import './components/userProfile';
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    & span {
+        font-weight: 400;
+        color: $white;
+        height: fit-content;
+        font-size: 11px;
+
+        &.logo {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #f16565;
+            padding: 4px;
+            font-size: 9px;
+            font-weight: 600;
+        }
+
+        & a {
+            color: $white;
+            text-decoration: none;
+            font-size: 11px;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import './root';
+
+main {
+    & .chart-style {
+        background: $card;
+        border: 1px solid $line;
+        box-sizing: border-box;
+        padding: 25px 30px;
+        border-radius: 10px;
+
+        & .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            & .chart_lengend {
+                & h6 {
+                    font-weight: 500;
+                }
+
+                & h3 {
+                    font-weight: 700;
+                }
+
+            }
+
+            & .bottom {
+                & h6 {
+                    font-weight: 400;
+                }
+            }
+        }
+
+
+    }
+
+    & .charts {
+        margin-top: 2rem;
+    }
+
+    & .doughnut_map {
+        margin: 2rem 0;
+    }
+}
+
+#myChart {
+    width: 100%;
+    height: 315px !important;
+}
+
+#Chart2 {
+    width: 100%;
+    height: 350px !important;
+}
+
+#worldMap {
+    width: 100%;
+    height: 400px;
+}

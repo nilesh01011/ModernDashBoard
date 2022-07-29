@@ -1,0 +1,427 @@
+@import './root';
+
+#cardContainer {
+    width: 100%;
+    height: 100%;
+
+    & .row {
+        justify-content: space-between;
+        row-gap: 40px;
+        padding-left: 14px;
+        padding-right: 14px;
+
+        & .cards {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s $CubicBezier;
+            user-select: none;
+            width: 250px;
+            height: 300px;
+            background: $card;
+            border-radius: 20px;
+            padding: 20px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                transition: 0.3s $CubicBezier;
+                opacity: 0;
+                clip-path: circle(7.4% at 100% 100%);
+                -webkit-clip-path: circle(7.4% at 100% 100%);
+            }
+
+            &.Toys::after {
+                background: url('../../img/ToysBG.png') no-repeat;
+                background-size: contain;
+            }
+
+            &.Computer::after {
+                background: url('../../img/ComputerBG.png') no-repeat;
+                background-size: contain;
+            }
+
+            &.Groceries::after {
+                background: url('../../img/GroceriesBG.png') no-repeat;
+                background-size: contain;
+            }
+
+            &.Furniture::after {
+                background: url('../../img/FurnitureBG.png') no-repeat;
+                background-size: contain;
+            }
+
+            &.Mobiles::after {
+                background: url('../../img/MobilesBG.png') no-repeat;
+                background-size: contain;
+            }
+
+            &.BabyCloths::after {
+                background: url('../../img/BabyToysBG.png') no-repeat;
+                background-size: contain;
+            }
+
+            &.Cloths::after {
+                background: url('../../img/ClothsBG.png') no-repeat;
+                background-size: contain;
+            }
+
+            &.Electronics::after {
+                background: url('../../img/ElectronicsBG.png') no-repeat;
+                background-size: contain;
+            }
+
+            &.Games::after {
+                background: url('../../img/GameBG.png') no-repeat;
+                background-size: contain;
+            }
+
+
+            &:hover::after {
+                opacity: 1;
+                transition: all 1000ms linear;
+                clip-path: circle(200% at 100% 100%);
+                -webkit-clip-path: circle(200% at 100% 100%);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: #191F3D;
+                border-radius: 20px;
+                z-index: 1;
+                clip-path: circle(7.4% at 100% 100%);
+                -webkit-clip-path: circle(7.4% at 100% 100%);
+                transition: 0.6s $CubicBezier;
+                box-shadow: $BoxShadow_2_4 $RGBA_03;
+            }
+
+
+            &:hover::before {
+                clip-path: circle(103% at 100% 100%);
+                -webkit-clip-path: circle(103% at 100% 100%);
+            }
+
+            & .card_head {
+                margin-left: auto;
+                z-index: 8;
+                width: 30px;
+                height: 30px;
+                background: none;
+                border-radius: 50%;
+                transition: all 0.3s $CubicBezier;
+                box-shadow: none;
+
+                text-align: center;
+
+                & i {
+                    cursor: pointer;
+                    line-height: 30px;
+                }
+            }
+
+            &:hover {
+                & .card_head {
+                    background: $card;
+                    box-shadow: 0 0 2px #000;
+                }
+
+                & .card_head i {
+                    color: #fd5555;
+                }
+
+                & .card_image {
+                    margin-top: -60px;
+                    margin-bottom: 60px;
+                }
+
+                & .card_add {
+                    animation: pulse_01 2s ease infinite;
+                }
+
+                & #card_pricing_btn button {
+                    bottom: 90px;
+                    opacity: 1;
+                }
+            }
+
+            & .card_image {
+                width: 100%;
+                height: 150px;
+                z-index: 5;
+                transition: 0.3s $CubicBezier;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            & .card_heading {
+                z-index: 7;
+
+                & .card_price,
+                & h5 {
+                    font-size: 18px;
+                    transition: 0.3s $CubicBezier;
+                }
+
+                & h5 {
+                    font-weight: 700;
+                    padding-top: 6px;
+                }
+
+                & .card_price {
+                    color: $text;
+                    transition: 0.3s $CubicBezier;
+                    opacity: 1;
+                    font-weight: 500;
+                    padding-top: 4px;
+
+                    & span:nth-child(1) {
+                        text-decoration: line-through;
+                        padding-right: 10px;
+                    }
+
+                    & span:nth-child(2) {
+                        color: #B12704;
+                        font-weight: 550;
+                    }
+                }
+
+                & .card_star i {
+                    font-size: 16px;
+                    color: #ffa41c;
+                }
+            }
+
+            & .cards_addit {
+                position: absolute;
+                bottom: -20px;
+                right: -40px;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: $background;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 20;
+
+                & a {
+                    background: none;
+                    text-decoration: none;
+
+                    &:active {
+                        position: relative;
+                        top: 1px;
+                    }
+                }
+
+                & .card_add {
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 50%;
+                    background: $card;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    box-shadow: $BoxShadow_2_4 $RGBA_03;
+
+
+                    & i {
+                        font-size: 1rem;
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@keyframes pulse_01 {
+    0% {
+        transform: scale(0.94);
+        box-shadow: 0 0 0 0 rgba(161, 158, 159, 0.7);
+        -webkit-box-shadow: 0 0 0 0 rgba(161, 158, 159, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 12px rgba(224, 201, 207, 0);
+        -webkit-box-shadow: 0 0 0 12px rgba(224, 201, 207, 0);
+    }
+
+    100% {
+        transform: scale(0.94);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+// =====WishList=====
+
+#far {
+    position: relative;
+    height: auto;
+    background: none;
+
+    & i.fas {
+        color: #fd5555;
+
+        &:active {
+            transform: scale(1.4);
+        }
+    }
+
+    & i.far {
+        color: #6c7878;
+
+        &:active {
+            transform: scale(1.4);
+        }
+    }
+
+    & i {
+        font-size: 18px;
+        transform: scale(1);
+        transition: transform 50ms $CubicBezier;
+    }
+
+    & span {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        display: block;
+        background: rgb(253, 85, 85);
+        transition: all 5ms ease-in-out;
+        overflow: hidden;
+        z-index: 2;
+        opacity: 0;
+
+        &.four {
+            left: 5px;
+            top: 2px;
+        }
+
+        &:nth-child(2) {
+            right: 5px;
+            top: 2px;
+            background: coral;
+        }
+
+        &:nth-child(3) {
+            right: 0;
+            bottom: 4px;
+            background: #4cd137;
+        }
+
+        &:nth-child(4) {
+            bottom: 4px;
+            left: 0;
+            background: blueviolet;
+        }
+
+        &:nth-child(5) {
+            top: 2px;
+            left: 40%;
+        }
+
+        &:nth-child(6) {
+            bottom: 0;
+            left: 40%;
+            background: #48dbfb;
+        }
+    }
+
+    &:active {
+        & span {
+            opacity: 1;
+            transform: scale(0.6);
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                right: -3px;
+            }
+
+            &.four {
+                left: -4px;
+            }
+
+            &:nth-child(4) {
+                left: -3px;
+            }
+
+            &:nth-child(5) {
+                top: -3px;
+            }
+
+            &:nth-child(6) {
+                bottom: -4px;
+            }
+        }
+    }
+}
+
+// ======WishList End=====
+
+#card_pricing_btn {
+    display: flex;
+    font-size: 16px;
+    position: relative;
+
+    & button {
+        opacity: 0;
+        cursor: pointer;
+        box-shadow: $BoxShadow_2_4 $RGBA_03;
+
+        &.one_btn {
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            position: absolute;
+            bottom: -10px;
+            transition: all 0.5s $CubicBezier;
+            letter-spacing: 1px;
+            background: rgb(253, 85, 85);
+            transform: scale(1);
+
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+
+        & span {
+            color: #fff;
+            font-weight: 700;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+
+            & i {
+                margin-right: 0.3rem;
+            }
+        }
+    }
+}

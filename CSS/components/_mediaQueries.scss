@@ -1,0 +1,455 @@
+@import './root';
+
+@media screen and (max-width:1038px) {
+    main {
+        & .charts {
+            margin-top: 1.5rem;
+
+            & .row {
+                gap: 20px;
+            }
+        }
+
+        & .doughnut_map {
+            margin: 1.5rem 0;
+
+            & .row {
+                gap: 20px;
+            }
+        }
+    }
+
+    #worldMap {
+        height: 350px !important;
+    }
+
+    #pieChart1 {
+        width: 100%;
+        height: 300px !important;
+    }
+
+    #cardContainer {
+        & .row {
+            column-gap: 20px;
+        }
+    }
+
+    #cardContainer {
+        & .row {
+            & .cards {
+                & .cards_addit {
+                    right: -5px !important;
+                    bottom: -30px !important;
+                }
+            }
+        }
+    }
+
+    #products_details {
+        & .details_containes {
+            & .content {
+
+                & .product_info {
+
+                    & span.title {
+                        font-size: 24px !important;
+                    }
+
+                    & .mrp_price span {
+                        font-size: 0.8rem !important;
+                    }
+
+                }
+            }
+        }
+    }
+
+    /* ======================Product Sections End====================== */
+}
+
+@media screen and (max-width:992px) {
+
+    main {
+        & .orders {
+            & .order_container {
+
+                & .bottom_container {
+                    overflow-x: scroll;
+                }
+            }
+        }
+
+
+        & .customer {
+            overflow-x: scroll;
+        }
+    }
+
+    #products_details {
+        & .details_containes {
+            & .content {
+                flex-direction: column !important;
+                gap: 0;
+
+                & .images {
+                    position: unset;
+                    margin-bottom: 45px;
+                    width: 100% !important;
+                    position: unset !important;
+
+                    & .hr {
+                        display: block !important;
+                        width: 100%;
+                        height: 1px;
+                        border-bottom: 1px solid $line;
+                        margin: 15px 0 !important;
+                    }
+                }
+
+                & .product_info {
+                    width: 100% !important;
+                    margin-left: 0;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    /* ====================Product Details End====================== */
+}
+
+@media screen and(max-width:880px) {
+    #products_details {
+        & .details_containes {
+            flex-direction: column;
+
+            & .buying_Content {
+
+                & .products_buying_sections {
+                    & .buttons_buying_addToCart {
+                        flex-direction: column !important;
+                        gap: 0;
+
+                        & button.buyNow {
+                            margin-top: 1.5rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ==================Product Details End================== */
+}
+
+@media screen and (max-width:756px) {
+
+    main .container-fluid,
+    .header .container-fluid {
+        padding: 0 20px;
+    }
+
+    main .insights .container-fluid {
+        padding: 0 12px;
+    }
+
+    main {
+        &.container-fluid {
+            padding: 0 20px;
+        }
+    }
+
+    #worldMap,
+    #pieChart1 {
+        height: 300px !important;
+    }
+
+    #cardContainer {
+        & .row {
+
+            & .cards {
+
+                &::before {
+                    clip-path: circle(103% at 100% 100%) !important;
+                    -webkit-clip-path: circle(103% at 100% 100%) !important;
+                }
+
+                &::after {
+                    opacity: 1 !important;
+                    transition: all 1000ms linear;
+                    clip-path: circle(200% at 100% 100%) !important;
+                    -webkit-clip-path: circle(200% at 100% 100%) !important;
+                }
+
+                & .card_heading {
+                    & h5 {
+                        font-size: 1rem !important;
+                    }
+
+                    & .card_price {
+                        & span {
+                            font-size: 14px !important;
+                        }
+                    }
+
+                    & .card_star {
+                        & i {
+                            font-size: 14px !important;
+                        }
+                    }
+
+                }
+
+                & .card_head {
+                    background: $card !important;
+                    box-shadow: 0 0 2px #000 !important;
+                }
+
+                & .card_image {
+                    height: 120px !important;
+                    margin-top: -50px !important;
+                    margin-bottom: 80px !important;
+                }
+
+                & .card_head i {
+                    color: #fd5555 !important;
+                }
+
+                & #card_pricing_btn button {
+                    bottom: 95px !important;
+                    opacity: 1 !important;
+                }
+
+                & .card_add {
+                    animation: pulse_01 2s ease infinite !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+
+
+    main {
+        & .insights .cards {
+            flex: none !important;
+            padding: 20px;
+        }
+
+        & .charts {
+            & .chart-style {
+                padding: 20px;
+            }
+        }
+
+        & .chart_lengend {
+            & h3 {
+                font-size: 1rem;
+            }
+
+            & h6 {
+                font-size: 14px;
+                margin-bottom: 0.2rem;
+            }
+        }
+
+        & .doughnut_map {
+            & .chart-style {
+                & .title {
+                    & .right {
+                        & h6 {
+                            font-size: 12px;
+                        }
+                    }
+
+                    & .chart_lengend {
+                        & h6 {
+                            font-size: 1rem;
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    & h3 {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    #myChart {
+        height: 150px !important;
+    }
+
+    #Chart2 {
+        height: 200px !important;
+    }
+
+    #worldMap {
+        height: 270px !important;
+    }
+
+
+    #cardsContainer {
+
+        & .button {
+            flex-direction: column;
+            height: auto !important;
+        }
+    }
+
+    #cardContainer {
+        & .row {
+            & .cards {
+                width: 175px !important;
+                padding: 15px !important;
+                height: 100% !important;
+
+                & .card_image {
+                    height: 100px !important;
+                    margin-bottom: 55px !important;
+                }
+
+                & .card_heading {
+                    & h5 {
+                        font-size: 12px !important;
+                    }
+
+                    & .card_price {
+                        & span {
+                            font-size: 11px !important;
+                        }
+                    }
+
+                    & .card_star {
+                        & i {
+                            font-size: 11px !important;
+                        }
+                    }
+                }
+
+                & #card_pricing_btn button {
+                    height: 30px !important;
+                    bottom: 85px !important;
+
+                    & span {
+                        font-size: 11px;
+                    }
+                }
+
+
+                & .cards_addit {
+                    width: 60px !important;
+                    height: 60px !important;
+                    bottom: -20px !important;
+
+                    & a {
+                        & .card_add {
+                            width: 40px;
+                            height: 40px;
+
+                            & i {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    #products_details {
+        padding-bottom: 0;
+
+        & .descriptions p span,
+        & .details_containes .content .product_info .about_content_items ul li {
+            font-size: 12px !important;
+        }
+
+        & .details_containes .content {
+            & .product_info {
+                & span.title {
+                    font-size: 1rem !important;
+                }
+            }
+
+            & .images {
+                height: 235px !important;
+            }
+        }
+
+
+        & .descriptions p {
+            padding-left: 0 !important;
+        }
+    }
+
+    #product_tabel {
+
+        & td,
+        & th {
+            width: fit-content;
+        }
+    }
+
+    /* ==============Product details=============== */
+
+
+}
+
+@media screen and (max-width:480px) {
+
+    main .container-fluid {
+        padding: 0 10px;
+    }
+
+    main {
+        &.cardsContainer {
+            padding: 0 18px;
+        }
+    }
+
+    #cardContainer {
+        & .row {
+            column-gap: 0;
+
+            & .cards {
+                width: 155px !important;
+                padding: 12px !important;
+
+                & .card_image {
+                    margin-bottom: 50px !important;
+                }
+
+                & .card_heading {
+                    & h5 {
+                        font-size: 10px !important;
+                    }
+
+                    & .card_price {
+                        & span {
+                            font-size: 9px !important;
+                        }
+                    }
+
+                    & .card_star {
+                        & i {
+                            font-size: 9px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #worldMap {
+        height: 200px !important;
+    }
+
+    #pieChart1 {
+        height: 200px !important;
+    }
+
+}

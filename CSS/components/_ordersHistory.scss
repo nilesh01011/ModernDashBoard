@@ -1,0 +1,329 @@
+@import './root';
+
+main {
+    & .orders {
+        margin-bottom: 2rem;
+
+        & .order_container {
+            border-radius: 10px;
+            padding: 20px;
+            background: $card;
+            font-weight: 500;
+
+
+            & .top_container {
+
+                & .right {
+                    & .select-position {
+                        position: relative;
+                        transition: 0.3s $CubicBezier;
+
+                        & select {
+                            padding: 10px 15px;
+                            padding-right: 46px;
+                            background: $background;
+                            border-radius: 10px;
+                            -webkit-appearance: none;
+                            border: 1px solid $background;
+                            transition: 0.3s $CubicBezier;
+                            color: $text;
+                            font-size: 15px;
+                            cursor: pointer;
+
+
+                            &:focus {
+                                border-color: $white;
+                            }
+
+                            & option {
+                                cursor: pointer;
+                            }
+                        }
+
+                        &::after {
+                            border-bottom: 2px solid $text;
+                            border-right: 2px solid $text;
+                            content: "";
+                            display: flex;
+                            height: 10px;
+                            width: 10px;
+                            margin-top: -5px;
+                            pointer-events: none;
+                            position: absolute;
+                            right: 16px;
+                            top: 45%;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+
+            & .bottom_container {
+                width: 100%;
+                height: 100%;
+            }
+
+            & li {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                &:not(:last-child) {
+                    padding-bottom: 10px;
+                }
+            }
+
+            & th,
+            & td {
+                padding: 10px 5px;
+                width: max-content !important;
+            }
+
+            & td {
+
+                & .title {
+                    width: max-content;
+                }
+            }
+
+            & tr {
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $text;
+                }
+            }
+
+
+            & .image {
+                width: 60px;
+                height: 60px;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            & .bottom_container {
+                margin-top: 30px;
+            }
+
+            & thead {
+                border-bottom: 1px solid $text;
+                font-weight: 600;
+            }
+
+            & ul {
+                padding-left: 0;
+                display: flex;
+                flex-direction: column;
+
+                & li {
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    &:not(:last-child) {
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#order_table {
+    width: 100%;
+
+    & tbody {
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        color: $text-light;
+
+        & tr {
+
+            & td {
+
+                & .product_image {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                & .userId {
+                    font-weight: 500;
+                }
+
+                & .status {
+                    & span {
+                        padding: 10px 20px;
+                        border-radius: 30px;
+
+                        &.pending_cancle {
+                            background: $danger-bg;
+                            color: $danger;
+                        }
+
+                        &.completed {
+                            background: $success-bg;
+                            color: $success;
+                        }
+
+                        &.pending_preparing {
+                            background: $warning-bg;
+                            color: $warning;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#custom_selected {
+    & .selectBox {
+        position: relative;
+        transition: 0.3s $CubicBezier;
+        overflow: hidden;
+        display: flex;
+        flex-grow: 1;
+
+        & select {
+            padding: 10px 15px;
+            padding-right: 0;
+            border-radius: 10px;
+            -webkit-appearance: none;
+            border-width: 1px;
+            border-style: solid;
+            transition: 0.3s $CubicBezier;
+            font-size: 15px;
+            flex-grow: 1;
+            cursor: pointer;
+
+            & option {
+                cursor: pointer;
+            }
+
+            &.pending_cancle {
+                background: $danger-bg;
+                color: $danger;
+
+                &:focus {
+                    border-color: $danger;
+                }
+
+                & option {
+                    cursor: pointer;
+                }
+            }
+
+            &.completed_delivered {
+                background: $success-bg;
+                color: $success;
+
+                &:focus {
+                    border-color: $success;
+                }
+
+                & option {
+                    cursor: pointer;
+                }
+            }
+
+            &.preparing {
+                background: $warning-bg;
+                color: $warning;
+
+                &:focus {
+                    border-color: $warning;
+                }
+
+                & option {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &::after {
+            border-bottom: 2px solid $white;
+            border-right: 2px solid $white;
+            content: "";
+            display: flex;
+            height: 8px;
+            width: 8px;
+            margin-top: -5px;
+            pointer-events: none;
+            position: absolute;
+            right: 16px;
+            top: 47%;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+#deleteOrderHistoryBtn {
+    width: 100%;
+    height: 100%;
+
+    & button {
+        width: 100%;
+        height: 45px;
+        border-radius: 10px;
+        background: $danger;
+        color: #fff;
+        padding: 0.5rem 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 15px;
+
+        & span {
+            margin-right: 0.2rem;
+            font-size: 16px;
+        }
+    }
+}
+
+#dropDownProduct {
+    & button.btn {
+        outline: 2px solid $primary;
+        color: $primary;
+        transition: all 0.3s $CubicBezier;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding-right: 2.5rem;
+
+        &::after {
+            border: none;
+        }
+
+        & span {
+            margin-left: 0.5rem;
+            position: absolute;
+            right: 0.4rem;
+            top: 20%;
+        }
+    }
+
+    & .dropdown-menu {
+        border-radius: 10px;
+        background: $background !important;
+        border-color: $line;
+        padding: 0.6rem;
+
+        & li {
+            color: $white;
+            border-radius: 7px;
+
+            &:hover {
+                background: #1C2337 !important;
+            }
+        }
+    }
+}

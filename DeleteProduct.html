@@ -1,0 +1,2890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- ===============FontAwesome CDN============ -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- =============Link Swiper's CSS============ -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- -----------------Material UI--------------- -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- -----------------Style Links--------------- -->
+    <link rel="stylesheet" href="./CSS/bootstrap.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!-- ----------------Font Family---------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container-fluid px-0">
+        <div class="header d-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-5 col-md-5 col-4">
+                        <div class="header-left">
+                            <button id="sidebarBtn" class="d-flex align-items-center" type="button">
+                                <span class="material-icons fs-3">menu_open</span>
+                                <h2 class="ms-2 fs-5">Menu</h2>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ---------------Left Side End------------- -->
+
+                    <div class="col-lg-7 col-md-7 col-8">
+                        <div class="header-right d-flex justify-content-end">
+                            <div class="header-message-box ml-15 d-none d-md-flex">
+                                <button id="message" data-bs-toggle="dropdown"
+                                    class="dropdown-toggle d-flex align-items-center justify-content-center position-relative">
+                                    <span class="material-icons">mail_outline</span>
+                                    <span class="count">3</span>
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="message">
+                                    <li>
+                                        <a href="#0">
+                                            <div class="image">
+                                                <span class="material-icons">person_outline</span>
+                                            </div>
+                                            <div class="content">
+                                                <h6>Jacob Jones</h6>
+                                                <p>Hey!I can across your profile and ...</p>
+                                                <span>10 mins ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">
+                                            <div class="image">
+                                                <span class="material-icons">person_outline</span>
+                                            </div>
+                                            <div class="content">
+                                                <h6>John Doe</h6>
+                                                <p>Would you mind please checking out</p>
+                                                <span>12 mins ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#2">
+                                            <div class="image">
+                                                <span class="material-icons">person_outline</span>
+                                            </div>
+                                            <div class="content">
+                                                <h6>Anee Lee</h6>
+                                                <p>Hey! are you available for freelance?</p>
+                                                <span>1h ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ----------------Header-messages End--------------- -->
+
+                            <div class="profile-box">
+                                <button class="bg-transparent">
+                                    <div class="profile-info">
+                                        <div class="info">
+                                            <h6>Nilesh Rathod</h6>
+                                            <div class="image">
+                                                <span class="material-icons">person_outline</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================Header End================= -->
+
+        <main class="container-fluid cardsContainer">
+            <div class="heading">
+                <h2>Delete products</h2>
+            </div>
+
+            <header id="adminHeader">
+                <div id="adminHeaderSwiper" class="swiper order-1">
+                    <div id="adminTabs" class="swiper-wrapper">
+                        <div class="swiper-slide btn active" onclick="filterSelection('main')">
+                            <i class="fas fa-home"></i> All product
+                        </div>
+                        <div id="electronic_btn" onclick="filterSelection('electronic')" class="btn swiper-slide">
+                            <i class="fas fa-desktop"></i>
+                            Electronics
+                        </div>
+                        <div id="toys_btn" class="btn swiper-slide" onclick="filterSelection('toys')">
+                            <i class="fab fa-evernote"></i>
+                            Toys
+                        </div>
+                        <div id="cloths_btn" class="btn swiper-slide" onclick="filterSelection('cloths')">
+                            <i class="fas fa-tshirt"></i> Cloths
+                        </div>
+
+                        <div id="baby_btn" class="btn swiper-slide" onclick="filterSelection('baby')">
+                            <i class="fas fa-baby"></i> Baby Cloths
+                        </div>
+
+                        <div id="mobile_btn" class="btn swiper-slide" onclick="filterSelection('mobile')">
+                            <i class="fas fa-mobile-alt"></i> Mobile
+                        </div>
+                        <div id="furniture_btn" class="btn swiper-slide" onclick="filterSelection('furniture')">
+                            <i class="fas fa-couch"></i> Furniture
+                        </div>
+                        <div id="groceries_btn" class="btn swiper-slide" onclick="filterSelection('groceries')">
+                            <i class="fas fa-mortar-pestle"></i>
+                            Groceries
+                        </div>
+                        <div id="game_btn" class="btn swiper-slide" onclick="filterSelection('game')">
+                            <i class="fab fa-playstation"></i> Games
+                        </div>
+                        <div id="computer_btn" class="btn swiper-slide" onclick="filterSelection('computer')">
+                            <i class="fas fa-laptop"></i> Computer
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- --------------Swiper End------------- -->
+
+            <!-- ==================Bottom-header-End============== -->
+
+            <div id="adminPage" class="pages">
+                <div class="page main is-page-active">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards Computer">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/DellAlienWareLaptop.png" loading="lazy" decoding="async"
+                                        alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Dell Alienware</h5>
+                                    <div class="card_price">
+                                        <span>₹3,18,999</span>
+                                        <span class="pro_price">₹2,57,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="1" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Computer">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/CrucialSSD.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Crucial SSD</h5>
+                                    <div class="card_price">
+                                        <span>₹23,999</span>
+                                        <span class="pro_price">₹13,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="2" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Computer">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/desktops.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Monitor & Cabinet</h5>
+                                    <div class="card_price">
+                                        <span>₹57,899</span>
+                                        <span class="pro_price">₹33,699</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="3" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Electronics">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/HeadPhones_1.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Razer PS5 Headset</h5>
+                                    <div class="card_price">
+                                        <span>₹7,199</span>
+                                        <span class="pro_price">₹5,699</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="4" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Mobiles">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/Iphone12ProMax.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">IPhone 12 Pro Max</h5>
+                                    <div class="card_price">
+                                        <span>₹1,39,000</span>
+                                        <span class="pro_price">₹1,29,900</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="5" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Computer">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/GskillRam.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Desktop Ram</h5>
+                                    <div class="card_price">
+                                        <span>₹21,199</span>
+                                        <span class="pro_price">₹13,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="6" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Toys">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/middleSide.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Pikachu SoftToy</h5>
+                                    <div class="card_price">
+                                        <span>₹1,199</span>
+                                        <span class="pro_price">₹799</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="7" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Cloths">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/Men_Woodlen.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Woolen Sweater</h5>
+                                    <div class="card_price">
+                                        <span>₹5,199</span>
+                                        <span class="pro_price">₹2,299</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="8" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards BabyCloths">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/boys_Trousers.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Clothing Set</h5>
+                                    <div class="card_price">
+                                        <span>₹1,499</span>
+                                        <span class="pro_price">₹899</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="9" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Furniture">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/Sofa.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">3 Seater Sofa</h5>
+                                    <div class="card_price">
+                                        <span>₹41,999</span>
+                                        <span class="pro_price">₹23,400</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="10" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Groceries">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/ProteinMuesli.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Protein Muesli</h5>
+                                    <div class="card_price">
+                                        <span>₹595</span>
+                                        <span class="pro_price">₹499</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="11" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Mobiles">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/AsusROG5.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Asus Rog 5</h5>
+                                    <div class="card_price">
+                                        <span>₹59,999</span>
+                                        <span class="pro_price">₹49,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="14" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Games">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/PubG.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Pubg</h5>
+                                    <div class="card_price">
+                                        <span>₹1,999</span>
+                                        <span class="pro_price">₹1,349</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="12" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Toys">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/rightSide.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Baby Elephant SoftToy</h5>
+                                    <div class="card_price">
+                                        <span>₹999</span>
+                                        <span class="pro_price">₹299</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="13" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Games">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/Cyberpunk.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Cyberpunk 2077</h5>
+                                    <div class="card_price">
+                                        <span>₹2,499</span>
+                                        <span class="pro_price">₹1,599</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="17" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Cloths">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/menKurtas.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Mens Kurta</h5>
+                                    <div class="card_price">
+                                        <span>₹2,999</span>
+                                        <span class="pro_price">₹945</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="15" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Games">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/ValhallaGames.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">PS5 Valhalla</h5>
+                                    <div class="card_price">
+                                        <span>₹3,499</span>
+                                        <span class="pro_price">₹2,499</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="16" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards BabyCloths">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/boys_tShirt1.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">H&M</h5>
+                                    <div class="card_price">
+                                        <span>₹699</span>
+                                        <span class="pro_price">₹299</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="18" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Groceries">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/DietSnacks.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Diet Snacks</h5>
+                                    <div class="card_price">
+                                        <span>₹299</span>
+                                        <span class="pro_price">₹249</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="19" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Electronics">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/washingMachine.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Washing Machine</h5>
+                                    <div class="card_price">
+                                        <span>₹45,999</span>
+                                        <span class="pro_price">₹35,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="20" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page electronic">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards Electronics">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/HeadPhones_1.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Razer PS5 Headset</h5>
+                                    <div class="card_price">
+                                        <span>₹7,199</span>
+                                        <span class="pro_price">₹5,699</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="4" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Electronics">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/washingMachine.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Washing Machine</h5>
+                                    <div class="card_price">
+                                        <span>₹45,999</span>
+                                        <span class="pro_price">₹35,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="20" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page toys">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards Toys">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/middleSide.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Pikachu SoftToy</h5>
+                                    <div class="card_price">
+                                        <span>₹1,199</span>
+                                        <span class="pro_price">₹799</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="7" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Toys">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/rightSide.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Baby Elephant SoftToy</h5>
+                                    <div class="card_price">
+                                        <span>₹999</span>
+                                        <span class="pro_price">₹299</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="13" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page cloths">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards Cloths">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/Men_Woodlen.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Woolen Sweater</h5>
+                                    <div class="card_price">
+                                        <span>₹5,199</span>
+                                        <span class="pro_price">₹2,299</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="8" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Cloths">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/menKurtas.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Mens Kurta</h5>
+                                    <div class="card_price">
+                                        <span>₹2,999</span>
+                                        <span class="pro_price">₹945</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="15" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page baby">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards BabyCloths">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/boys_Trousers.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Clothing Set</h5>
+                                    <div class="card_price">
+                                        <span>₹1,499</span>
+                                        <span class="pro_price">₹899</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="9" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards BabyCloths">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/boys_tShirt1.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">H&M</h5>
+                                    <div class="card_price">
+                                        <span>₹699</span>
+                                        <span class="pro_price">₹299</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="18" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page mobile">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards Mobiles">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/Iphone12ProMax.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">IPhone 12 Pro Max</h5>
+                                    <div class="card_price">
+                                        <span>₹1,39,000</span>
+                                        <span class="pro_price">₹1,29,900</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="5" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Mobiles">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/AsusROG5.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Asus Rog 5</h5>
+                                    <div class="card_price">
+                                        <span>₹59,999</span>
+                                        <span class="pro_price">₹49,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="14" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page furniture">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards Furniture">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/Sofa.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">3 Seater Sofa</h5>
+                                    <div class="card_price">
+                                        <span>₹41,999</span>
+                                        <span class="pro_price">₹23,400</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="10" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page groceries">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards Groceries">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/ProteinMuesli.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Protein Muesli</h5>
+                                    <div class="card_price">
+                                        <span>₹595</span>
+                                        <span class="pro_price">₹499</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="11" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Groceries">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/DietSnacks.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Diet Snacks</h5>
+                                    <div class="card_price">
+                                        <span>₹299</span>
+                                        <span class="pro_price">₹249</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="19" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page game">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards Games">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/PubG.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Pubg</h5>
+                                    <div class="card_price">
+                                        <span>₹1,999</span>
+                                        <span class="pro_price">₹1,349</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="12" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Games">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/Cyberpunk.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Cyberpunk 2077</h5>
+                                    <div class="card_price">
+                                        <span>₹2,499</span>
+                                        <span class="pro_price">₹1,599</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="17" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Games">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/ValhallaGames.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">PS5 Valhalla</h5>
+                                    <div class="card_price">
+                                        <span>₹3,499</span>
+                                        <span class="pro_price">₹2,499</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="16" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page computer">
+                    <div id="cardContainer">
+                        <div class="row">
+                            <div class="col-xl-3 col-auto cards Computer">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/DellAlienWareLaptop.png" loading="lazy" decoding="async"
+                                        alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Dell Alienware</h5>
+                                    <div class="card_price">
+                                        <span>₹3,18,999</span>
+                                        <span class="pro_price">₹2,57,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="1" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Computer">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/CrucialSSD.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Crucial SSD</h5>
+                                    <div class="card_price">
+                                        <span>₹23,999</span>
+                                        <span class="pro_price">₹13,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="2" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Computer">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/desktops.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Monitor & Cabinet</h5>
+                                    <div class="card_price">
+                                        <span>₹57,899</span>
+                                        <span class="pro_price">₹33,699</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="3" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+
+                            <div class="col-xl-3 col-auto cards Computer">
+                                <div class="card_head">
+                                    <button role="button" id="far">
+                                        <i class="far fa-heart"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="four"></span>
+                                    </button>
+                                </div>
+                                <!-- ------------card wishlist head End--------- -->
+
+                                <div class="card_image">
+                                    <img src="./img/GskillRam.png" loading="lazy" decoding="async" alt="cards_img">
+                                </div>
+
+                                <!-- --------------card Image End------------- -->
+
+                                <div class="card_heading">
+                                    <h5 class="mb-0">Desktop Ram</h5>
+                                    <div class="card_price">
+                                        <span>₹21,199</span>
+                                        <span class="pro_price">₹13,999</span>
+                                    </div>
+                                    <div class="card_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+
+                                <!-- ---------------card heading End------------ -->
+
+                                <div class="addToCart">
+                                    <div data-productdetails="6" class="cards_addit">
+                                        <a href="./ProductDetails.html" target="_blank">
+                                            <div class="card_add">
+                                                <i class="fa fa-plus"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- -------------addToCart + icons End------------ -->
+
+                                <div id="card_pricing_btn">
+                                    <button role="button" class="one_btn">
+                                        <span>
+                                            <i class="fal fa-edit"></i> Delete Card
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- -------------card_pricing_btn End------------ -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <span>copyright &copy; 2022 <span class="logo">WB</span> <a href="./index.html" class="link">WishBin.in</a>
+                All
+                rights
+                reserved.</span>
+        </div>
+    </footer>
+
+    <!-- ==================Footer End================= -->
+
+    <div id="sidebar">
+        <div class="navbar-logo d-flex align-items-center">
+            <a href="./index.html">
+                <span class="logo">WB</span>
+                WishBin
+            </a>
+            <div class="sidebar-dismiss">
+                <div class="logo">
+                    <span class="material-icons">close</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- -----------navbar-logo and Dismiss End----------- -->
+
+        <nav class="sidebar-nav">
+            <div class="divider">
+                <hr>
+            </div>
+            <ul>
+                <li>
+                    <a href="./index.html" class="navLink">
+                        <div class="icon">
+                            <span class="material-icons">dashboard</span>
+                        </div>
+                        <div class="text">Dashboard</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a id="expand_more" href="#" data-bs-toggle="collapse" data-bs-target="#page_menu"
+                        class="d-flex navLink collapsed">
+                        <div class="icon">
+                            <span class="material-icons">description</span>
+                        </div>
+                        <div class="text">
+                            Pages
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                    </a>
+
+                    <ul id="page_menu" class="dropdown-nav collapse">
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">shopping_cart</span>
+                                </div>
+                                <div class="text">Cart Page</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">shopping_cart_checkout</span>
+                                </div>
+                                <div class="text">Order Page</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">favorite</span>
+                                </div>
+                                <div class="text">
+                                    Wishlist Page
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a id="expand_more" href="#" data-bs-toggle="collapse" data-bs-target="#auth_menu"
+                        class="d-flex navLink collapsed">
+                        <div class="icon">
+                            <span class="material-icons">switch_account</span>
+                        </div>
+                        <div class="text">
+                            Auth
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                    </a>
+                    <ul id="auth_menu" class="dropdown-nav collapse">
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">verified_user</span>
+                                </div>
+                                <div class="text">
+                                    Login Page
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">app_registration</span>
+                                </div>
+                                <div class="text">
+                                    Registers Page
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="./customer.html" class="navLink">
+                        <div class="icon">
+                            <span class="material-icons">groups</span>
+                        </div>
+                        <div class="text">Customers</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./orders.html" class="navLink">
+                        <div class="icon">
+                            <span class="material-icons">receipt_long</span>
+                        </div>
+                        <div class="text">Orders</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" id="expand_more" data-bs-toggle="collapse" data-bs-target="#product_menu"
+                        class="d-flex navLink active collapsed">
+                        <div class="icon">
+                            <span class="material-icons">category</span>
+                        </div>
+                        <div class="text">
+                            Products
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                    </a>
+
+                    <ul id="product_menu" class="dropdown-nav collapse show">
+                        <li>
+                            <a href="./AddProduct.html">
+                                <div class="icon">
+                                    <span class="material-icons">add_box</span>
+                                </div>
+                                <div class="text">Add Product</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./Preview.html">
+                                <div class="icon">
+                                    <span class="material-icons">visibility</span>
+                                </div>
+                                <div class="text">Preview</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./UpdateProduct.html">
+                                <div class="icon">
+                                    <span class="material-icons">edit</span>
+                                </div>
+                                <div class="text">Update Product</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./DeleteProduct.html" class="is-active">
+                                <div class="icon">
+                                    <span class="material-icons">delete_forever</span>
+                                </div>
+                                <div class="text">Delete Product</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./ProductDetails.html">
+                                <div class="icon">
+                                    <span class="material-icons">preview</span>
+                                </div>
+                                <div class="text">
+                                    Product Details
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="./UserProfile.html" class="navLink">
+                        <div class="icon">
+                            <span class="material-icons">account_circle</span>
+                        </div>
+                        <div class="text">User Profile</div>
+                    </a>
+                </li>
+            </ul>
+            <div class="divider">
+                <hr>
+            </div>
+        </nav>
+
+
+        <li class="logout">
+            <button type="button">
+                <div class="icon">
+                    <span class="material-icons">logout</span>
+                </div>
+                <div class="text">Logout</div>
+            </button>
+        </li>
+    </div>
+
+    <div id="overlay"></div>
+
+    <!-- ===========================Script JS======================= -->
+    <script src="./JS/bootstrap.bundle.js"></script>
+    <script src="./JS//main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./JS/SwiperJS.js"></script>
+
+</body>
+
+</html>

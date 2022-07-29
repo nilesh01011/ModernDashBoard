@@ -1,0 +1,47 @@
+@import './root';
+
+#adminHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 18px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+    z-index: 85;
+}
+
+#adminHeaderSwiper {
+    width: 100%;
+    height: 100%;
+    order: 1;
+
+    & .swiper-wrapper {
+        width: 100%;
+        height: 100%;
+
+        & .swiper-slide {
+            width: fit-content;
+            height: 100%;
+            padding: 0.6rem 1rem;
+            background: $card;
+            margin-right: 0;
+            color: $text-light;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 13px;
+            user-select: none;
+            transition: $CubicBezier;
+            box-shadow: $BoxShadow_2_4 $RGBA_03;
+            text-shadow: 1px 1px #000;
+        }
+    }
+
+    #adminTabs .active,
+    & .swiper-slide:hover {
+        color: #fff;
+        background: $primary;
+    }
+}

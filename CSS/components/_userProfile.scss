@@ -1,0 +1,157 @@
+@import './root';
+
+#adminUserProfile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .adminUserProfile {
+        width: 450px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: $BoxShadow_6_12 $RGBA_06;
+        border-radius: 7px;
+
+        & .UserHeader {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+            padding-bottom: 20px;
+            padding-top: 3rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 7px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -160%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 520px;
+                height: 520px;
+                border-radius: 50%;
+                background: $primary;
+                z-index: -1;
+            }
+
+
+            & .userImage {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & .userName {
+                    padding-bottom: 1rem;
+                    height: 3px;
+
+                    & .name h3 {
+                        font-weight: 600;
+                    }
+                }
+
+                & .image {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $background;
+                    box-shadow: $BoxShadow_03 $RGBA_06;
+
+                    & i {
+                        font-size: 3rem;
+                        font-weight: 200;
+                    }
+                }
+            }
+        }
+
+        & .bottom_container {
+            width: 100%;
+            height: 100%;
+            padding: 0 30px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            & .contents {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                & .hr {
+                    width: 100%;
+                    height: 0.5px;
+                    background: $text;
+                    margin: 1.5rem 0;
+                }
+
+                & .field {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    & .icons {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        border: 1px solid $text;
+                        padding: 10px;
+
+                        & i {
+                            font-weight: 100;
+                        }
+                    }
+
+                    & span {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+
+                }
+            }
+
+            & .buttons {
+                width: 100%;
+                height: 45px;
+
+                & a {
+                    width: 100%;
+                    height: 100%;
+                    padding: 1rem 2rem;
+                    text-transform: uppercase;
+                    background: $primary;
+                    border-radius: 30px;
+                    font-weight: 700;
+                    letter-spacing: 0.6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}
+
+// ================= User Messages

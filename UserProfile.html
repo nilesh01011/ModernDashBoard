@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- -----------------Font Awesome Icons--------------- -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <!-- -----------------Material UI--------------- -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- -----------------Style Links--------------- -->
+    <link rel="stylesheet" href="./CSS/bootstrap.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!-- ----------------Font Family---------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container-fluid px-0">
+        <div class="header d-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-5 col-md-5 col-4">
+                        <div class="header-left">
+                            <button id="sidebarBtn" class="d-flex align-items-center" type="button">
+                                <span class="material-icons fs-3">menu_open</span>
+                                <h2 class="ms-2 fs-5">Menu</h2>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ---------------Left Side End------------- -->
+
+                    <div class="col-lg-7 col-md-7 col-8">
+                        <div class="header-right d-flex justify-content-end">
+                            <div class="header-message-box ml-15 d-none d-md-flex">
+                                <button id="message" data-bs-toggle="dropdown"
+                                    class="dropdown-toggle d-flex align-items-center justify-content-center position-relative">
+                                    <span class="material-icons">mail_outline</span>
+                                    <span class="count">3</span>
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="message">
+                                    <li>
+                                        <a href="#0">
+                                            <div class="image">
+                                                <span class="material-icons">person_outline</span>
+                                            </div>
+                                            <div class="content">
+                                                <h6>Jacob Jones</h6>
+                                                <p>Hey!I can across your profile and ...</p>
+                                                <span>10 mins ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">
+                                            <div class="image">
+                                                <span class="material-icons">person_outline</span>
+                                            </div>
+                                            <div class="content">
+                                                <h6>John Doe</h6>
+                                                <p>Would you mind please checking out</p>
+                                                <span>12 mins ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#2">
+                                            <div class="image">
+                                                <span class="material-icons">person_outline</span>
+                                            </div>
+                                            <div class="content">
+                                                <h6>Anee Lee</h6>
+                                                <span>1h ago</span>
+                                                <p>Hey! are you available for freelance?</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ----------------Header-messages End--------------- -->
+
+                            <div class="profile-box">
+                                <button class="bg-transparent">
+                                    <div class="profile-info">
+                                        <div class="info">
+                                            <h6>Nilesh Rathod</h6>
+                                            <div class="image">
+                                                <span class="material-icons">person_outline</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================Header End================= -->
+
+        <main id="adminContainer" class="container-fluid">
+            <div class="heading">
+                <h2 class="mb-0">User Profile</h2>
+            </div>
+            <div id="adminUserProfile">
+                <div class="adminUserProfile">
+                    <div class="UserHeader">
+                        <div class="userName">
+                            <h3 style="text-transform: capitalize;">
+                                Nilesh Rathod
+                            </h3>
+                        </div>
+                        <div class="userImage">
+                            <div class="image">
+                                <i class="far fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ====Header End===== -->
+
+                    <div class="bottom_container">
+                        <div class="contents">
+                            <div class="field userName">
+                                <div class="icons">
+                                    <i class="far fa-user"></i>
+                                </div>
+                                <div class="name">
+                                    <span style="text-transform: capitalize;">
+                                        nilesh rathod
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="hr"></div>
+                            <div class="field userPhone">
+                                <div class="icons">
+                                    <i class="fas fa-mobile"></i>
+                                </div>
+                                <div class="phone">
+                                    <span>+91 xxxxxxxxxx</span>
+                                </div>
+                            </div>
+                            <div class="hr"></div>
+                            <div class="field userEmail">
+                                <div class="icons">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="email">
+                                    <span>
+                                        nrrathod@gmail.com
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="hr"></div>
+                            <div class="field userAddress">
+                                <div class="icons">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div class="address">
+                                    <span>
+                                        xxxxxxxxxx...
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ====contents End==== -->
+                        <div class="buttons">
+                            <a href="#">
+                                <i class="fas fa-user-edit"></i>
+                                Edit Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <span>copyright &copy; 2022 <span class="logo">WB</span> <a href="./index.html" class="link">WishBin.in</a>
+                All
+                rights
+                reserved.</span>
+        </div>
+    </footer>
+
+    <!-- ==================Footer End================= -->
+
+    <div id="sidebar">
+        <div class="navbar-logo d-flex align-items-center">
+            <a href="./index.html">
+                <span class="logo">WB</span>
+                WishBin
+            </a>
+            <div class="sidebar-dismiss">
+                <div class="logo">
+                    <span class="material-icons">close</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- -----------navbar-logo and Dismiss End----------- -->
+
+        <nav class="sidebar-nav">
+            <div class="divider">
+                <hr>
+            </div>
+            <ul>
+                <li>
+                    <a href="./index.html" class="navLink">
+                        <div class="icon">
+                            <span class="material-icons">dashboard</span>
+                        </div>
+                        <div class="text">Dashboard</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a id="expand_more" href="#" data-bs-toggle="collapse" data-bs-target="#page_menu"
+                        class="d-flex navLink collapsed">
+                        <div class="icon">
+                            <span class="material-icons">description</span>
+                        </div>
+                        <div class="text">
+                            Pages
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                    </a>
+
+                    <ul id="page_menu" class="dropdown-nav collapse">
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">shopping_cart</span>
+                                </div>
+                                <div class="text">Cart Page</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">shopping_cart_checkout</span>
+                                </div>
+                                <div class="text">Order Page</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">favorite</span>
+                                </div>
+                                <div class="text">
+                                    Wishlist Page
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a id="expand_more" href="#" data-bs-toggle="collapse" data-bs-target="#auth_menu"
+                        class="d-flex navLink collapsed">
+                        <div class="icon">
+                            <span class="material-icons">switch_account</span>
+                        </div>
+                        <div class="text">
+                            Auth
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                    </a>
+                    <ul id="auth_menu" class="dropdown-nav collapse">
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">verified_user</span>
+                                </div>
+                                <div class="text">
+                                    Login Page
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <span class="material-icons">app_registration</span>
+                                </div>
+                                <div class="text">
+                                    Registers Page
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="./customer.html" class="navLink">
+                        <div class="icon">
+                            <span class="material-icons">groups</span>
+                        </div>
+                        <div class="text">Customers</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./orders.html" class="navLink">
+                        <div class="icon">
+                            <span class="material-icons">receipt_long</span>
+                        </div>
+                        <div class="text">Orders</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" id="expand_more" data-bs-toggle="collapse" data-bs-target="#product_menu"
+                        class="d-flex navLink collapsed">
+                        <div class="icon">
+                            <span class="material-icons">category</span>
+                        </div>
+                        <div class="text">
+                            Products
+                            <span class="material-icons">expand_more</span>
+                        </div>
+                    </a>
+
+                    <ul id="product_menu" class="dropdown-nav collapse">
+                        <li>
+                            <a href="./AddProduct.html">
+                                <div class="icon">
+                                    <span class="material-icons">add_box</span>
+                                </div>
+                                <div class="text">Add Product</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./Preview.html">
+                                <div class="icon">
+                                    <span class="material-icons">visibility</span>
+                                </div>
+                                <div class="text">Preview</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./UpdateProduct.html">
+                                <div class="icon">
+                                    <span class="material-icons">edit</span>
+                                </div>
+                                <div class="text">Update Product</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./DeleteProduct.html">
+                                <div class="icon">
+                                    <span class="material-icons">delete_forever</span>
+                                </div>
+                                <div class="text">Delete Product</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./ProductDetails.html">
+                                <div class="icon">
+                                    <span class="material-icons">preview</span>
+                                </div>
+                                <div class="text">
+                                    Product Details
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="./UserProfile.html" class="navLink active">
+                        <div class="icon">
+                            <span class="material-icons">account_circle</span>
+                        </div>
+                        <div class="text">User Profile</div>
+                    </a>
+                </li>
+            </ul>
+            <div class="divider">
+                <hr>
+            </div>
+        </nav>
+
+
+        <li class="logout">
+            <button type="button">
+                <div class="icon">
+                    <span class="material-icons">logout</span>
+                </div>
+                <div class="text">Logout</div>
+            </button>
+        </li>
+    </div>
+
+    <div id="overlay"></div>
+
+    <!-- ===========================Script JS======================= -->
+    <script src="./JS/bootstrap.bundle.js"></script>
+    <script src="./JS//main.js"></script>
+</body>
+
+</html>
